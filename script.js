@@ -29,6 +29,10 @@ function speakPhrase(phrase) {
     speech.speak(utterance);
 }
 
+function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
 speakButton.addEventListener('click', () => {
     currentPhrase = getRandomPhrase();
     phraseDisplay.textContent = currentPhrase;
@@ -36,7 +40,11 @@ speakButton.addEventListener('click', () => {
 });
 
 listenButton.addEventListener('click', () => {
-    resultDiv.textContent = 'Listening... Speak now!';
+    if (isMobile()) {
+        resultDiv.textContent = 'Tap the microphone icon on your keyboard to start speaking.';
+    } else {
+        resultDiv.textContent = 'Listening... Speak now!';
+    }
     recognition.start();
 });
 
