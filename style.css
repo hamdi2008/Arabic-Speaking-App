@@ -57,6 +57,16 @@ button:active {
     word-wrap: break-word;
 }
 
+.notice {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    border-radius: 5px;
+    color: #856404;
+    font-size: 0.9rem;
+}
+
 @media (max-width: 480px) {
     body {
         padding: 10px;
@@ -77,5 +87,9 @@ button:active {
 
     #phraseDisplay {
         font-size: 1rem;
+    }
+
+    .notice {
+        font-size: 0.8rem;
     }
 }
